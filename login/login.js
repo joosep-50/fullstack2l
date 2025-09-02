@@ -1,19 +1,20 @@
 const formulario = document.querySelector('.iniciar-sesion');
-const btnAdmin = document.getElementById('btn-admin');
 
-// 1) USUARIOS (botón "Ingresar" => submit del formulario)
+// USUARIOS Y ADMINISTRADOR en el mismo submit
 formulario.addEventListener('submit', function (e) {
   e.preventDefault();
 
   const email = document.getElementById('email').value.trim();
   const password = document.getElementById('password').value.trim();
 
-  // Evitar que el admin intente entrar por aquí
-  if (email === 'adm@gmail.com') {
-    alert('Para el Administrador, usa el botón "Administrador".');
+  // 🔹 Validación especial para Administrador (secreto)
+  if (email === 'adm@gmail.com' && password === '00000000') {
+    alert('Bienvenido, Administrador');
+    window.location.href = '../administrador/adm.html';
     return;
   }
 
+  // 🔹 Validación de usuarios normales (desde localStorage)
   const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
   const usuario = usuarios.find(u => u.correo === email);
 
@@ -29,17 +30,4 @@ formulario.addEventListener('submit', function (e) {
 
   alert(`Bienvenido, ${usuario.nombre}`);
   window.location.href = '../index/index.html';
-});
-
-// 2) ADMINISTRADOR (botón "Administrador" => click)
-btnAdmin.addEventListener('click', function () {
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim();
-
-  if (email === 'adm@gmail.com' && password === '00000000') {
-    alert('Bienvenido, Administrador');
-    window.location.href = '../administrador/adm.html';
-  } else {
-    alert('Correo o contraseña incorrectos para Administrador');
-  }
 });
