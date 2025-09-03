@@ -13,7 +13,18 @@
             <a href="../index/index.html"> Menu principal</a>
         </nav>
     </header>
-
+<!---------------------------------------------------------------------------------/-->
+    <button class="boton" id="boton">☰</button>
+    <nav class="navegacion" id="navegacion">
+        <a href="../index/index.html">Menu principal</a>
+        <a href="../login/login.html">Iniciar sesión</a>
+        <a href="../registro/registro.html"> Registrarse</a>
+        <a href="../producto/producto.html">Productos</a>
+        <a href="../contacto/contacto.html">Contacto</a>
+        <a href="../nosotros/nosotros.html">Nosotros</a>
+        
+    </nav>
+<!---------------------------------------------------------------------------------/-->
     <main>
         <div class="registro">
             <h1 class="titulo">WallEat</h1>
@@ -41,7 +52,7 @@
                     <input type="password" id="clave2" name="clave2" placeholder="Repite tu contraseña" required minlength="8">
                 </div>
                 <!-- Boton -->
-                <button type="submit" class="boton">Registrarse</button>
+                <button type="submit" class="btn">Registrarse</button>
                 <!-- Enlace de regreso -->
                 <p class="iniciar">
                     ¿Ya tienes cuenta? <a href="../login/login.html">Inicia Sesion</a>
@@ -49,7 +60,9 @@
             </form>
         </div>
     </main>
-    <script src="registro.js"></script>
+    <script src="../index/index.js" defer></script>
+    <script src="registro.js" defer></script>
+
 </body>
 </html>
 
