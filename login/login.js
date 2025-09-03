@@ -10,7 +10,7 @@ formulario.addEventListener('submit', function (e) {
   // 🔹 Validación especial para Administrador (secreto)
   if (email === 'adm@gmail.com' && password === '00000000') {
     alert('Bienvenido, Administrador');
-    window.location.href = '../administrador/adm.html';
+    window.location.href = '../homeAdministrador/home.html';
     return;
   }
 
