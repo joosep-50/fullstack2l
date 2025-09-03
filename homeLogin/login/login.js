@@ -29,5 +29,5 @@ formulario.addEventListener('submit', function (e) {
   }
 
   alert(`Bienvenido, ${usuario.nombre}`);
-  window.location.href = '../index/index.html';
+  window.location.href = '../../homeusuario/home.html';
 });

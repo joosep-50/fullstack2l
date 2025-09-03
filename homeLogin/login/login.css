@@ -37,17 +37,17 @@ nav a:hover {
     animation: fadeIn 1s ease-in-out;
 }
 .boton {
-  position: fixed;
-  top: 15px;
-  left: 15px;
-  font-size: 20px;
-  background: #333;
-  color: white;
-  border: none;
-  cursor: pointer;
-  z-index: 1001;
-  padding: 10px;
-  border-radius: 5px;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    font-size: 20px;
+    background: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    padding: 10px;
+    border-radius: 5px;
 }
 
 .navegacion {

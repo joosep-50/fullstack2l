@@ -8,7 +8,6 @@
   box-shadow: 0 2px 8px rgba(0,0,0,.1);
 }
 
-/* Barra de filtros (simple, sin JS) */
 .filtros{
   display: flex;
   gap: 10px;
