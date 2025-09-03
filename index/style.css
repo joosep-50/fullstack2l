@@ -1,39 +1,31 @@
-body {
-  background: linear-gradient(135deg, #f71703, #f50303);
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-body {
-  margin: 0;
+/* ========== BASE ========== */
+body{
+  margin:0;
   font-family: Arial, sans-serif;
-  background-color: #fafafa;
-  color: #333;
-  text-align: center;
-
+  background:#fafafa;
+  color:#333;
 }
 
-header {
-  width: 100%;
-  background: linear-gradient(135deg, #ff1904, #ff2600);
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+header{
+  width:100%;
+  background: linear-gradient(135deg,#ff1904,#ff2600);
+  color:#fff;
+  text-align:center;
+  padding:20px 0;
+  box-shadow:0 2px 5px rgba(0,0,0,.2);
 }
 
-main > section {
-  max-width: 1000px;
+/* Tarjeta base para secciones (excepto ajustes del hero más abajo) */
+main > section{
+  max-width: 1100px;
   margin: 20px auto;
   padding: 20px;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
 
-/* boton barra---------------------------------------------------*/
+/* ========== TU MENÚ LATERAL (sin cambios) ========== */
 .boton {
   position: fixed;
   top: 15px;
@@ -72,150 +64,122 @@ main > section {
   transition: background 0.3s;
   white-space: nowrap;
 }
-
-.navegacion a:hover {
-  background-color: #575757;
-}
+.navegacion a:hover { background-color: #575757; }
 
 .content {
   margin-left: 220px;
   padding: 20px;
   transition: margin-left 0.3s ease;
 }
-/* boton barra------------------------------------------------------ */
 
-.btn {
-  display: inline-block;
-  padding: 12px 20px;
-  background: linear-gradient(135deg, #ff1904, #ff2600);
-  color: #fff;
-  font-weight: 700;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: opacity .2s, transform .2s;
-}
-.btn:hover {
-  opacity: .9;
-  transform: translateY(-2px);
-}
-
-
-.principio {
-  text-align: center;
-  background: linear-gradient(135deg, #ff1904, #ff2600);
-  color: #fff;
-  padding: 24px 12px;          /* antes 50px 5px */
-}
-.principio h1 {
-  margin: 0 0 10px;
-}
-.principio p {
-  margin: 0 0 18px;
-  opacity: .95;
-}
-.principio .btn {
-  background: #fff;
-  color: #ff2600;
-}
-.principio .btn:hover {
-  background: #f5f5f5;
-  color: #d40000;
-}
-
-[src$="logo.png"]{
-  width: 140px;                
-  height: auto;
-  display: block;
-  margin: 8px auto 12px;
-
-}
-
+/* ===== Centrar contenido por defecto y empujar SOLO con menú abierto en desktop ===== */
+.content{ margin-left:0; } /* centrado por defecto */
 @media (min-width: 992px){
-  .navegacion.active ~ .content{
-    margin-left: 220px;           /* deja espacio solo cuando el nav está visible */
-  }
+  .navegacion.active ~ .content{ margin-left:220px; }
 }
 
+/* ========== BOTÓN GENÉRICO ========== */
+.btn{
+  display:inline-block;
+  padding:12px 20px;
+  background: linear-gradient(135deg,#ff1904,#ff2600);
+  color:#fff;
+  font-weight:700;
+  border-radius:8px;
+  text-decoration:none;
+  transition: opacity .2s, transform .15s;
+}
+.btn:hover{ opacity:.9; transform: translateY(-1px); }
 
+/* ========== HERO (.principio) ========== */
+.principio{
+  text-align:center;
+  background: linear-gradient(135deg,#ff1904,#ff2600);
+  color:#fff;
+  padding:32px 16px;           /* ajusta alto del bloque rojo */
+}
+.principio h1{ margin:0 0 8px; }
+.principio p{  margin:0 0 12px; opacity:.95; }
 
-/* destacados-----------------------------------*/
-.destacados h2 {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 20px;
+.principio img{
+  display:block;
+  margin:12px auto 16px;
+  width:160px;                 /* tamaño simple y corto */
+  max-width:60%;
+  height:auto;
 }
-.destacados > div {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+.principio .btn{
+  background:#fff; color:#ff2600;
 }
-.destacados article {
-  background: #fff;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 6px rgba(0,0,0,.1);
-  text-align: center;
-  transition: transform .2s ease, box-shadow .2s ease;
+.principio .btn:hover{
+  background:#f5f5f5; color:#d40000;
 }
-.destacados article:hover {
+
+/* ========== DESTACADOS ========== */
+.destacados h2{
+  text-align:center;
+  margin:0 0 16px;
+}
+.destacados > div{
+  display:grid;
+  gap:16px;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+}
+.destacados article{
+  background:#fff;
+  border-radius:12px;
+  box-shadow:0 2px 6px rgba(0,0,0,.1);
+  overflow:hidden;
+  text-align:center;
+  transition: transform .15s ease, box-shadow .2s ease;
+}
+.destacados article:hover{
   transform: translateY(-3px);
   box-shadow: 0 6px 16px rgba(0,0,0,.12);
 }
-.destacados img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
+.destacados img{
+  width:100%;
+  height:170px;
+  object-fit:cover;
+  display:block;
 }
-.destacados h3 {
-  margin: 12px 0 16px;
-  font-size: 1.1rem;
+.destacados h3{
+  margin:10px 0 14px;
+  font-size:1.05rem;
+  color:#222;
 }
-/* destacados-----------------------------------*/
 
+/* ========== NOSOTROS (mini) ========== */
+.nosotros{
+  text-align:center;
+}
+.nosotros p{ max-width: 800px; margin: 8px auto 0; }
 
-/* nosotros-----------------------------------*/
-.nosotros {
-  text-align: center;
-}
-.nosotros .btn {
-  margin-top: 15px;
-  background: #ff2600;
-  color: #fff;
-}
-.nosotros .btn:hover {
-  opacity: .85;
-}
-/* nosotros-----------------------------------*/
-
-
-/* ubicacion-----------------------------------*/
-.ubicacion {
-  text-align: center;
-}
-.ubicacion ul {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  gap: 10px;
+/* ========== UBICACIÓN ========== */
+.ubicacion{ text-align:center; }
+.ubicacion ul{
+  list-style:none;
+  padding:0;
+  margin:12px auto 0;
+  display:grid;
+  gap:10px;
   grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
-  max-width: 700px;
-  margin: 15px auto 0;
+  max-width:700px;
 }
-.ubicacion li {
-  background: #fff;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,.08);
-  font-weight: 600;
-}
-
-/*ubicacion----------------------------------- */
-
-.final {
-  text-align: center;
-}
-.final .btn {
-  margin-top: 15px;
+.ubicacion li{
+  background:#fff;
+  padding:10px;
+  border-radius:8px;
+  box-shadow:0 2px 5px rgba(0,0,0,.08);
+  font-weight:600;
 }
 
+/* ========== CTA FINAL ========== */
+.final{ text-align:center; }
+.final .btn{ margin-top:10px; }
 
+/* ========== RESPONSIVE FINOS ========== */
+@media (max-width: 480px){
+  main > section{ padding:16px; }
+  .principio img{ width:140px; }
+}
